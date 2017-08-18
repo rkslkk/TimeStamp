@@ -2,8 +2,58 @@
 <html>
     <head>
         <title>Timestamp for Viafly</title>
+        
+        <!-- react -->
+        <script src="https://fb.me/react-15.1.0.js"></script>
+        <script src="https://fb.me/react-dom-15.1.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+        <!-- css -->
+        <link href="main.css" type="text/css" rel="stylesheet">
     </head>
 <body>
-    <p>Test Test</p>
+    
+    <h1>Timestamp</h1>
+    <div id="greeting-div"></div>
+    
+    
+    <script type="text/babel">
+
+        var Stopwatch = React.createClass({
+            
+            getMinutes () {
+                return Math.floor(this.state.secondsElapsed / 60);
+            },
+            
+            getSeconds () {
+                return ('0' + this.state.secondsElapsed % 60).slice(-2);
+            },
+            
+            getInitialState: function() {
+                return{ secondsElapsed: 5};
+            },
+                
+            startClick: function() {
+                alert("starting timer");
+            },
+            
+            stopClick: function() {
+                alert("stopping timer");
+            },
+            
+            render: function () {
+                return <div>
+                    <h1>{this.getMinutes()}:{this.getSeconds()}</h1>
+                    
+                    
+                    <button type="button" onClick={this.startClick}>start</button>
+                    <button type="button" onClick={this.stopClick}>stop</button>
+        </div>;
+            }
+        })
+        
+        ReactDOM.render(<Stopwatch />, document.body);
+    
+    </script>
+
 </body>
 </html>
