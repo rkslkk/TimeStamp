@@ -1,0 +1,23 @@
+div {
+    text-align: center;
+    font-size: 6vw;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+}
+
+#stop {
+    background-color: #f44336;
+}
+
+#start {
+    background-color: #4CAF50;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #5DABF6;
+}

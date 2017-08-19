@@ -12,7 +12,6 @@
     </head>
 <body>
     
-    <h1>Timestamp</h1>
     <div id="greeting-div"></div>
     
     
@@ -29,15 +28,26 @@
             },
             
             getInitialState: function() {
-                return{ secondsElapsed: 5};
+                return{ secondsElapsed: 0};
             },
                 
             startClick: function() {
-                alert("starting timer");
+                var _this = this;
+                
+                 this.incremeter = setInterval(function () {
+                    _this.setState({
+                        secondsElapsed:
+            (_this.state.secondsElapsed + 1)
+                    })
+                }, 1000)
             },
             
             stopClick: function() {
-                alert("stopping timer");
+                clearInterval(this.incremeter);
+            },
+            
+            ResetClick: function() {
+                this.setState({ secondsElapsed: 0 });
             },
             
             render: function () {
@@ -45,8 +55,9 @@
                     <h1>{this.getMinutes()}:{this.getSeconds()}</h1>
                     
                     
-                    <button type="button" onClick={this.startClick}>start</button>
-                    <button type="button" onClick={this.stopClick}>stop</button>
+                    <button type="button" onClick={this.startClick} id="start">start</button>
+                    <button type="button" onClick={this.stopClick} id="stop">stop</button>
+                    <button type="button" onClick={this.ResetClick} id="reset">reset</button>
         </div>;
             }
         })
