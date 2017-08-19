@@ -6,6 +6,8 @@ div {
 button {
     padding: 15px 32px;
     color: white;
+    border: none;
+    font-size: 16px;
 }
 
 #stop {
