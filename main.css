@@ -4,8 +4,8 @@ div {
 }
 
 button {
-    height: 50px;
-    width: 50px;
+    padding: 15px 32px;
+    color: white;
 }
 
 #stop {
@@ -20,4 +20,8 @@ html {
     margin: 0;
     padding: 0;
     background-color: #5DABF6;
+}
+
+#reset {
+    background-color: #8E44AD;
 }
